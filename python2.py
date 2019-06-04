@@ -24,5 +24,10 @@ async def on_ready():
     client.loop.create_task(status_task())
     
     
+@client.command(pass_context=True)
+async def hello(ctx):
+    await ctx.send("Well, You've made it")
+    
+    
     
 client.run(os.getenv('TOKEN'))
